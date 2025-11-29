@@ -5,7 +5,6 @@ pipeline {
         stage('build') 
         {
             steps {
-                git branch: 'main', url: 'https://github.com/AhmedGhanem31/frist-repo.git'
                 sh "docker build -t ahmedghanem1/web-app:${env.BUILD_ID} ."
                 withCredentials([usernamePassword(credentialsId: 'docker-cre', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                   
