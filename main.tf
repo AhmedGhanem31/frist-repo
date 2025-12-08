@@ -32,7 +32,7 @@ resource "aws_security_group" "bastion_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]  # ضع IP جينكينز هنا
+    cidr_blocks = ["44.200.66.111"]  # ضع IP جينكينز هنا
   }
 
   egress {
@@ -82,7 +82,7 @@ resource "aws_instance" "bastion" {
   subnet_id                   = module.vpc.public_subnet_ids[0]
   associate_public_ip_address = true
 
-  key_name               = "b2"  # دخّل اسم مفتاحك
+  key_name               = "Ahmed.pem"  # دخّل اسم مفتاحك
   vpc_security_group_ids = [aws_security_group.bastion_sg.id]
 
   tags = {
