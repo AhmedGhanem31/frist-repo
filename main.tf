@@ -32,7 +32,7 @@ resource "aws_security_group" "bastion_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["44.222.103.106"]  # ضع IP جينكينز هنا
+    cidr_blocks = ["44.222.103.106/32"]  # ضع IP جينكينز هنا
   }
 
   egress {
