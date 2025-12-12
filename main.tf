@@ -82,7 +82,7 @@ resource "aws_instance" "bastion" {
   subnet_id                   = module.vpc.public_subnet_ids[0]
   associate_public_ip_address = true
 
-  key_name               = "Ahmed.pem"  # دخّل اسم مفتاحك
+  key_name               = "b2"  # دخّل اسم مفتاحك
   vpc_security_group_ids = [aws_security_group.bastion_sg.id]
 
   tags = {
